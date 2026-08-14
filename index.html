@@ -44,7 +44,7 @@
     align-items: center;
     gap: clamp(8px, 3vw, 16px);
     margin-bottom: clamp(4px, 2vw, 8px);
-    flex-wrap: wrap;
+    min-width: 0; /* Allows flex items to shrink below content size */
   }
   
   .club-logo {
@@ -77,8 +77,9 @@
   }
   h1{
     font-family:'Zilla Slab', serif; font-weight:700;
-    font-size: clamp(20px, 6vw, 34px);
+    font-size: clamp(18px, 5vw, 34px);
     line-height:1.1; color: var(--text); margin-bottom: 0;
+    min-width: 0; /* Allows text to shrink and wrap if needed */
   }
   header p.sub{ 
     color: var(--text-dim); 
