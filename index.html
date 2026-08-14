@@ -39,16 +39,32 @@
     border-bottom: 1px solid var(--line);
   }
   
-  .header-top {
+  .title-row {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 12px;
+    align-items: center; /* Centers the logo and text vertically */
+    gap: 12px;           /* Adds perfect spacing between the logo and text */
+    margin-bottom: 6px;
   }
+  
   .club-logo {
-    height: 32px; /* Adjust to fit your specific logo */
+    height: 38px;        /* Slightly larger to match the H1 height better */
     width: auto;
-    border-radius: 4px;
+    border-radius: 6px;
+    flex-shrink: 0;      /* Prevents the logo from getting squished on tiny screens */
+  }
+
+  h1 {
+    font-family: 'Zilla Slab', serif; 
+    font-weight: 700;
+    font-size: clamp(26px, 6vw, 34px);
+    line-height: 1.1; 
+    color: var(--text); 
+    margin-bottom: 0;    /* Removed the bottom margin since the row handles it now */
+  }
+  
+  /* Make sure the eyebrow margin is back to normal */
+  header .eyebrow {
+    margin-bottom: 12px;
   }
   
   .eyebrow{
@@ -134,12 +150,11 @@
 <body>
 
 <header>
-  <div class="header-top">
-    <!-- Replace this placeholder with your club logo image path -->
-    <img src="club_logo.webp" alt="Club Logo" class="club-logo">
-    <div class="eyebrow"><span class="compass"></span> Junior Induction · 17 Aug</div>
+  <div class="eyebrow"><span class="compass"></span> Junior Induction · 17 Aug</div>
+  <div class="title-row">
+    <img src="YOUR_LOGO_URL_HERE.webp" alt="Club Logo" class="club-logo">
+    <h1>Find Your Way Around NITW</h1>
   </div>
-  <h1>Find Your Way Around NITW</h1>
   <p class="sub">Search or filter, then tap "Directions" to open it in Google Maps.</p>
 </header>
 
