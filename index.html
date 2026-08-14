@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NITW Campus Guide — Induction 2026</title>
+<link rel="icon" type="image/webp" href="club_logo.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -54,26 +55,17 @@
     flex-shrink: 0;
   }
   
-  /* Make sure the eyebrow margin is back to normal */
+  /* Eyebrow below the title */
   header .eyebrow {
-    margin-bottom: clamp(8px, 2vw, 12px);
+    margin-top: clamp(6px, 2vw, 8px);
+    margin-bottom: 0;
     font-size: clamp(11px, 2.5vw, 12px);
   }
   
   .eyebrow{
-    display:flex; align-items:center; gap:8px;
+    display:flex; align-items:center; gap:0;
     letter-spacing: 0.14em; text-transform: uppercase;
     color: var(--stone); font-weight:600;
-  }
-  .compass{
-    width:14px; height:14px; border:1.5px solid var(--stone); border-radius:50%;
-    position:relative; flex-shrink:0;
-  }
-  .compass::after{
-    content:""; position:absolute; top:50%; left:50%;
-    width:1.5px; height:8px; background: var(--stone);
-    transform-origin: bottom center;
-    transform: translate(-50%,-100%) rotate(35deg);
   }
   h1{
     font-family:'Zilla Slab', serif; font-weight:700;
@@ -149,10 +141,12 @@
 <body>
 
 <header>
-  <div class="eyebrow"><span class="compass"></span> Junior Induction · 17 Aug</div>
   <div class="title-row">
     <img src="club_logo.webp" alt="Club Logo" class="club-logo">
-    <h1>Find Your Way Around NITW</h1>
+    <div>
+      <h1>Find Your Way Around NITW</h1>
+      <div class="eyebrow">Junior Induction · 17 Aug</div>
+    </div>
   </div>
   <p class="sub">Search or filter, then tap "Directions" to open it in Google Maps.</p>
 </header>
