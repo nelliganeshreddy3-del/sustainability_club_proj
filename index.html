@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NITW Campus Guide — Induction 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #17140F;
+    --surface: #221D16;
+    --surface-hover: #2B241A;
+    --stone: #C98A3E;
+    --stone-dim: #8C6432;
+    --moss: #5C8374;
+    --text: #F2E9DB;
+    --text-dim: #A99C86;
+    --line: #3A3125;
+  }
+  *{ box-sizing: border-box; margin:0; padding:0; -webkit-tap-highlight-color: transparent; }
+  html{ -webkit-text-size-adjust: 100%; }
+  html,body{ background: var(--bg); color: var(--text); font-family:'Inter',sans-serif; -webkit-font-smoothing:antialiased; }
+  body{ min-height:100vh; padding-bottom: 48px; touch-action: manipulation; }
+
+  /* subtle carved-stone texture on the background */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(201,138,62,0.07) 1px, transparent 0);
+    background-size: 22px 22px;
+    pointer-events:none;
+  }
+
+  header{
+    position: sticky; top:0; z-index: 10;
+    background: linear-gradient(180deg, var(--bg) 70%, rgba(23,20,15,0.85) 100%);
+    padding: 20px 16px 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .club-logo {
+    height: 32px; /* Adjust to fit your specific logo */
+    width: auto;
+    border-radius: 4px;
+  }
+  
+  .eyebrow{
+    display:flex; align-items:center; gap:8px;
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--stone); font-weight:600;
+  }
+  .compass{
+    width:14px; height:14px; border:1.5px solid var(--stone); border-radius:50%;
+    position:relative; flex-shrink:0;
+  }
+  .compass::after{
+    content:""; position:absolute; top:50%; left:50%;
+    width:1.5px; height:8px; background: var(--stone);
+    transform-origin: bottom center;
+    transform: translate(-50%,-100%) rotate(35deg);
+  }
+  h1{
+    font-family:'Zilla Slab', serif; font-weight:700;
+    font-size: clamp(26px, 6vw, 34px);
+    line-height:1.1; color: var(--text); margin-bottom: 6px;
+  }
+  header p.sub{ color: var(--text-dim); font-size: 14px; }
+
+  .search-wrap{ padding: 14px 16px 0; }
+  .search{
+    width:100%; padding: 13px 14px; border-radius: 10px;
+    background: var(--surface); border: 1px solid var(--line);
+    color: var(--text); font-family:'Inter',sans-serif; font-size:16px;
+    min-height: 46px;
+  }
+  .search::placeholder{ color: var(--text-dim); }
+  .search:focus{ outline:none; border-color: var(--stone); }
+
+  .tabs{
+    display:flex; gap:8px; padding: 14px 16px 4px;
+    overflow-x:auto; scrollbar-width:none;
+  }
+  .tabs::-webkit-scrollbar{ display:none; }
+  .tab{
+    flex-shrink:0; padding: 10px 18px; border-radius: 999px;
+    border: 1px solid var(--line); background: transparent;
+    color: var(--text-dim); font-size: 13.5px; font-weight:600;
+    letter-spacing:0.02em; cursor:pointer; transition: background .12s ease, color .12s ease;
+    font-family:'Inter',sans-serif; min-height: 40px;
+  }
+  .tab.active{ background: var(--stone); border-color: var(--stone); color: #1A1409; }
+  .tab:active{ transform: scale(0.96); }
+
+  main{ padding: 6px 16px 0; max-width: 640px; margin: 0 auto; }
+  .group-label{
+    font-family:'Zilla Slab', serif; font-weight:600; font-size: 13px;
+    text-transform: uppercase; letter-spacing: 0.1em; color: var(--moss);
+    margin: 20px 2px 10px;
+  }
+  .card{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    background: var(--surface); border:1px solid var(--line); border-radius: 12px;
+    padding: 16px; margin-bottom: 10px; transition: background .12s ease;
+    text-decoration:none; color: inherit; min-height: 64px;
+  }
+  .card:active{ background: var(--surface-hover); transform: scale(0.99); }
+  .card-name{ font-size:15.5px; font-weight:600; color: var(--text); margin-bottom:4px; line-height:1.3; }
+  .card-desc{ font-size:13px; color: var(--text-dim); line-height:1.4; }
+  .go-chip{
+    flex-shrink:0; display:flex; align-items:center; gap:6px;
+    background: rgba(201,138,62,0.12); border:1px solid var(--stone-dim); color: var(--stone);
+    padding: 9px 13px; border-radius: 8px; font-size: 12px; font-weight:700;
+    white-space:nowrap; pointer-events: none;
+  }
+  .go-chip svg{ width:13px; height:13px; flex-shrink:0; }
+
+  .hint{ font-size:12.5px; color: var(--text-dim); padding: 2px 2px 4px; }
+
+  .empty{ text-align:center; color: var(--text-dim); padding: 40px 20px; font-size:14px; }
+
+  footer{
+    text-align:center; color: var(--text-dim); font-size:12px;
+    margin-top: 40px; padding: 0 20px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <!-- Replace this placeholder with your club logo image path -->
+    <img src="club_logo.webp" alt="Club Logo" class="club-logo">
+    <div class="eyebrow"><span class="compass"></span> Junior Induction · 17 Aug</div>
+  </div>
+  <h1>Find Your Way Around NITW</h1>
+  <p class="sub">Search or filter, then tap "Directions" to open it in Google Maps.</p>
+</header>
+
+<div class="search-wrap">
+  <input class="search" id="searchInput" type="text" placeholder="Search a department, hostel, or landmark…" />
+</div>
+
+<div class="tabs" id="tabs">
+  <button class="tab active" data-cat="all">All</button>
+  <button class="tab" data-cat="dept">Departments</button>
+  <button class="tab" data-cat="hostel">Hostels</button>
+  <button class="tab" data-cat="landmark">Landmarks</button>
+</div>
+
+<main>
+  <div class="hint">Tap anywhere on a card to open directions in Maps</div>
+  <div id="results"></div>
+</main>
+
+<footer>NIT Warangal Campus Guide · Made for Induction 2026</footer>
+
+<script>
+const LOCATIONS = [
+  // Departments
+  { name: "Computer Science & Engineering (CSE)", category: "dept", desc: "Main CSE academic block", mapsQuery: "Computer Science Engineering Department NIT Warangal" },
+  { name: "Electronics & Communication Engg (ECE)", category: "dept", desc: "ECE academic block", mapsQuery: "ECE Department NIT Warangal" },
+  { name: "Electrical Engineering (EEE)", category: "dept", desc: "EEE academic block", mapsQuery: "Electrical Engineering Department NIT Warangal" },
+  { name: "Mechanical Engineering (ME)", category: "dept", desc: "Mechanical block & workshops", mapsQuery: "Mechanical Engineering Department NIT Warangal" },
+  { name: "Civil Engineering (CE)", category: "dept", desc: "Civil block & structures lab", mapsQuery: "Civil Engineering Department NIT Warangal" },
+  { name: "Chemical Engineering", category: "dept", desc: "Chemical Engg block", mapsQuery: "Chemical Engineering Department NIT Warangal" },
+  { name: "Metallurgical & Materials Engg (MME)", category: "dept", desc: "MME block", mapsQuery: "Metallurgical Engineering Department NIT Warangal" },
+  { name: "Biotechnology", category: "dept", desc: "Biotech block & labs", mapsQuery: "Biotechnology Department NIT Warangal" },
+  { name: "School of Management (MBA)", category: "dept", desc: "Dept. of Management Studies", mapsQuery: "Department of Management Studies NIT Warangal" },
+  { name: "Physics, Chemistry & Maths (Sciences)", category: "dept", desc: "Basic sciences block", mapsQuery: "Department of Physics NIT Warangal" },
+
+  // Hostels
+  { name: "Ramappa Hall (1.8K Ultra Mega Hostel)", category: "hostel", desc: "1st-year B.Tech & M.Tech hostel", mapsQuery: "Ramappa Hall of Residence NIT Warangal" },
+  { name: "Kakatiya Hall", category: "hostel", desc: "2nd-year hostel block", mapsQuery: "Kakatiya Hall NIT Warangal" },
+  { name: "Priyadarshini Hall (Girls)", category: "hostel", desc: "Women's hostel", mapsQuery: "Priyadarshini Hall NIT Warangal" },
+  { name: "International Hall of Residence", category: "hostel", desc: "Hostel for international students", mapsQuery: "International Hall of Residence NIT Warangal" },
+  { name: "1K Hostel", category: "hostel", desc: "Senior boys hostel block", mapsQuery: "1K Hostel NIT Warangal" },
+  { name: "Bhadrakali Hall", category: "hostel", desc: "Senior girls hostel", mapsQuery: "Bhadrakali Hall NIT Warangal" },
+  { name: "Visweswaraya Hall", category: "hostel", desc: "Senior boys hostel", mapsQuery: "Visweswaraya Hall NIT Warangal" },
+  { name: "C.V. Raman Hall", category: "hostel", desc: "Senior boys hostel", mapsQuery: "C.V. Raman Hall NIT Warangal" },
+  { name: "Sarvepalli Radhakrishnan Hall", category: "hostel", desc: "Senior boys hostel", mapsQuery: "Radhakrishnan Hall NIT Warangal" },
+
+  // Landmarks
+  { name: "Main Building / Administration", category: "landmark", desc: "Admin block, Director's office", mapsQuery: "NIT Warangal Main Building" },
+  { name: "Central Library", category: "landmark", desc: "Main library", mapsQuery: "NIT Warangal Central Library" },
+  { name: "Main Gate", category: "landmark", desc: "Campus entrance", mapsQuery: "NIT Warangal Main Gate" },
+  { name: "SBI Bank & ATM", category: "landmark", desc: "Near main gate", mapsQuery: "State Bank of India NIT Warangal" },
+  { name: "OAT (Open Air Theatre)", category: "landmark", desc: "Events & induction sessions", mapsQuery: "Open Air Theatre NIT Warangal" },
+  { name: "Sports Complex", category: "landmark", desc: "Stadium, courts, gym", mapsQuery: "NIT Warangal Sports Complex" },
+  { name: "Health Centre", category: "landmark", desc: "Campus medical centre", mapsQuery: "NIT Warangal Health Centre" },
+  { name: "CCPD (Placement Cell)", category: "landmark", desc: "Centre for Career Planning & Dev.", mapsQuery: "CCPD NIT Warangal" },
+  { name: "Student Activity Centre (SAC)", category: "landmark", desc: "Clubs and student bodies", mapsQuery: "Student Activity Centre NIT Warangal" }
+];
+
+const results = document.getElementById('results');
+const searchInput = document.getElementById('searchInput');
+const tabs = document.querySelectorAll('.tab');
+let activeCat = 'all';
+
+function mapsUrl(query){
+  return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(query);
+}
+
+function render(){
+  const term = searchInput.value.trim().toLowerCase();
+  const filtered = LOCATIONS.filter(loc => {
+    const matchesCat = activeCat === 'all' || loc.category === activeCat;
+    const matchesSearch = !term || loc.name.toLowerCase().includes(term) || loc.desc.toLowerCase().includes(term);
+    return matchesCat && matchesSearch;
+  });
+
+  if(filtered.length === 0){
+    results.innerHTML = '<div class="empty">No matches. Try a different search.</div>';
+    return;
+  }
+
+  const groups = { dept: "Departments", hostel: "Hostels", landmark: "Landmarks" };
+  let html = "";
+  Object.keys(groups).forEach(cat => {
+    const items = filtered.filter(l => l.category === cat);
+    if(items.length === 0) return;
+    html += `<div class="group-label">${groups[cat]}</div>`;
+    items.forEach(loc => {
+      html += `
+        <a class="card" href="${mapsUrl(loc.mapsQuery)}" rel="noopener">
+          <div>
+            <div class="card-name">${loc.name}</div>
+            <div class="card-desc">${loc.desc}</div>
+          </div>
+          <span class="go-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Go
+          </span>
+        </a>`;
+    });
+  });
+  results.innerHTML = html;
+}
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    activeCat = tab.dataset.cat;
+    render();
+  });
+});
+searchInput.addEventListener('input', render);
+render();
+</script>
+</body>
+</html>
