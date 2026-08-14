@@ -9,33 +9,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg: #17140F;
-    --surface: #221D16;
-    --surface-hover: #2B241A;
-    --stone: #C98A3E;
-    --stone-dim: #8C6432;
-    --moss: #5C8374;
-    --text: #F2E9DB;
-    --text-dim: #A99C86;
-    --line: #3A3125;
+    --bg: #f4f7f2;
+    --surface: #ffffff;
+    --surface-hover: #f7faf5;
+    --stone: #4285F4;
+    --stone-dim: #1a73e8;
+    --moss: #0f9d58;
+    --red: #ea4335;
+    --yellow: #fbbc05;
+    --green: #34a853;
+    --text: #202124;
+    --text-dim: #5f6368;
+    --line: #e7ece4;
   }
   *{ box-sizing: border-box; margin:0; padding:0; -webkit-tap-highlight-color: transparent; }
   html{ -webkit-text-size-adjust: 100%; }
   html,body{ background: var(--bg); color: var(--text); font-family:'Inter',sans-serif; -webkit-font-smoothing:antialiased; }
   body{ min-height:100vh; padding-bottom: 48px; touch-action: manipulation; }
 
-  /* subtle carved-stone texture on the background */
   body::before{
     content:"";
     position:fixed; inset:0;
-    background-image: radial-gradient(circle at 1px 1px, rgba(201,138,62,0.07) 1px, transparent 0);
-    background-size: 22px 22px;
+    background-image:
+      radial-gradient(circle at 12% 16%, rgba(52,168,83,0.13) 0, rgba(52,168,83,0.13) 18%, transparent 19%),
+      radial-gradient(circle at 82% 18%, rgba(251,188,5,0.14) 0, rgba(251,188,5,0.14) 16%, transparent 17%),
+      radial-gradient(circle at 58% 78%, rgba(234,67,53,0.09) 0, rgba(234,67,53,0.09) 12%, transparent 13%);
     pointer-events:none;
   }
 
   header{
     position: sticky; top:0; z-index: 10;
-    background: linear-gradient(180deg, var(--bg) 70%, rgba(23,20,15,0.85) 100%);
+    background: linear-gradient(180deg, rgba(244,247,242,0.96) 70%, rgba(244,247,242,0.9) 100%);
+    backdrop-filter: blur(6px);
     padding: clamp(12px, 4vw, 20px) clamp(12px, 4vw, 20px) clamp(8px, 3vw, 12px);
     border-bottom: 1px solid var(--line);
   }
@@ -83,11 +88,12 @@
 
   .search-wrap{ padding: clamp(10px, 3vw, 14px) clamp(12px, 4vw, 20px) 0; }
   .search{
-    width:100%; padding: clamp(11px, 2vw, 14px) clamp(12px, 3vw, 14px); border-radius: 10px;
+    width:100%; padding: clamp(11px, 2vw, 14px) clamp(12px, 3vw, 14px); border-radius: 12px;
     background: var(--surface); border: 1.5px solid var(--line);
     color: var(--text); font-family:'Inter',sans-serif; font-size:clamp(14px, 3.5vw, 16px);
     min-height: clamp(42px, 10vw, 48px);
     transition: all 0.3s ease;
+    box-shadow: 0 8px 18px rgba(66,133,244,0.04);
   }
   .search::placeholder{ color: var(--text-dim); }
   .search:focus{ 
@@ -112,9 +118,9 @@
     position: relative;
   }
   .tab.active{ 
-    color: var(--stone);
-    border-bottom-color: var(--stone);
-    background: transparent;
+    color: var(--green);
+    border-bottom-color: var(--green);
+    background: rgba(52,168,83,0.08);
   }
   .tab:hover{ color: var(--text); }
   .tab:active{ transform: scale(0.97); }
@@ -133,16 +139,17 @@
     padding: 16px; margin-bottom: 14px; transition: all 0.3s ease;
     text-decoration:none; color: inherit; min-height: 64px;
     cursor: pointer;
+    box-shadow: 0 8px 18px rgba(15, 157, 88, 0.03);
   }
   .card:hover{ 
     background: var(--surface-hover); 
-    border-color: var(--stone-dim);
+    border-color: rgba(66,133,244,0.7);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(201,138,62,0.15);
+    box-shadow: 0 8px 20px rgba(66,133,244,0.08);
   }
   .card:active{ 
     transform: translateY(0);
-    box-shadow: 0 4px 12px rgba(201,138,62,0.1);
+    box-shadow: 0 4px 12px rgba(52,168,83,0.08);
   }
   .card-name{ 
     font-size:clamp(14px, 3.5vw, 15.5px); 
@@ -162,14 +169,14 @@
   .card:hover .card-desc{ color: var(--text); }
   .go-chip{
     flex-shrink:0; display:flex; align-items:center; gap:6px;
-    background: rgba(201,138,62,0.15); border:1.5px solid var(--stone); color: var(--stone);
+    background: rgba(52,168,83,0.1); border:1.5px solid var(--green); color: var(--green);
     padding: clamp(7px, 2vw, 9px) clamp(11px, 3vw, 13px); border-radius: 8px; 
     font-size: clamp(11px, 2.5vw, 12px); font-weight:700;
     white-space:nowrap; pointer-events: none;
     transition: all 0.2s ease;
   }
   .card:hover .go-chip{
-    background: rgba(201,138,62,0.25);
+    background: rgba(52,168,83,0.16);
     transform: translateX(2px);
   }
   .go-chip svg{ width:clamp(12px, 3vw, 14px); height:clamp(12px, 3vw, 14px); flex-shrink:0; }
@@ -194,7 +201,7 @@
       <div class="eyebrow">Junior Induction · 17 Aug</div>
     </div>
   </div>
-  <p class="sub">Search or filter, then tap "Directions" to open it in Google Maps.</p>
+  <p class="sub">Search or filter, then tap “Open” to view the exact place in Google Maps.</p>
 </header>
 
 <div class="search-wrap">
@@ -209,11 +216,11 @@
 </div>
 
 <main>
-  <div class="hint">Tap anywhere on a card to open directions in Maps</div>
+  <div class="hint">Tap a card to open the building entrance in Maps</div>
   <div id="results"></div>
 </main>
 
-<footer>NIT Warangal Campus Guide · Made for Induction 2026</footer>
+<footer>NIT Warangal Campus Guide · Built for Induction 2026</footer>
 
 <script>
 const LOCATIONS = [
@@ -244,7 +251,8 @@ const tabs = document.querySelectorAll('.tab');
 let activeCat = 'all';
 
 function mapsUrl(coords){
-  return "https://www.google.com/maps/search/?api=1&query=" + coords;
+  const cleanCoords = String(coords).replace(/\s+/g, '');
+  return "https://www.google.com/maps/search/?api=1&query=" + cleanCoords;
 }
 
 function render(){
@@ -268,14 +276,14 @@ function render(){
     html += `<div class="group-label">${groups[cat]}</div>`;
     items.forEach(loc => {
       html += `
-        <a class="card" href="${mapsUrl(loc.coords)}" rel="noopener" target="_blank">
+        <a class="card" href="${mapsUrl(loc.coords)}" rel="noopener noreferrer" target="_blank">
           <div>
             <div class="card-name">${loc.name}</div>
             <div class="card-desc">${loc.desc}</div>
           </div>
           <span class="go-chip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-            Go
+            Open
           </span>
         </a>`;
     });
