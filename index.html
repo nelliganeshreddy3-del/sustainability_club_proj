@@ -217,39 +217,25 @@
 
 <script>
 const LOCATIONS = [
-  // Departments
-  { name: "Computer Science & Engineering (CSE)", category: "dept", desc: "Main CSE academic block", mapsQuery: "Computer Science Engineering Department NIT Warangal" },
-  { name: "Electronics & Communication Engg (ECE)", category: "dept", desc: "ECE academic block", mapsQuery: "ECE Department NIT Warangal" },
-  { name: "Electrical Engineering (EEE)", category: "dept", desc: "EEE academic block", mapsQuery: "Electrical Engineering Department NIT Warangal" },
-  { name: "Mechanical Engineering (ME)", category: "dept", desc: "Mechanical block & workshops", mapsQuery: "Mechanical Engineering Department NIT Warangal" },
-  { name: "Civil Engineering (CE)", category: "dept", desc: "Civil block & structures lab", mapsQuery: "Civil Engineering Department NIT Warangal" },
-  { name: "Chemical Engineering", category: "dept", desc: "Chemical Engg block", mapsQuery: "Chemical Engineering Department NIT Warangal" },
-  { name: "Metallurgical & Materials Engg (MME)", category: "dept", desc: "MME block", mapsQuery: "Metallurgical Engineering Department NIT Warangal" },
-  { name: "Biotechnology", category: "dept", desc: "Biotech block & labs", mapsQuery: "Biotechnology Department NIT Warangal" },
-  { name: "School of Management (MBA)", category: "dept", desc: "Dept. of Management Studies", mapsQuery: "Department of Management Studies NIT Warangal" },
-  { name: "Physics, Chemistry & Maths (Sciences)", category: "dept", desc: "Basic sciences block", mapsQuery: "Department of Physics NIT Warangal" },
-
-  // Hostels
-  { name: "Ramappa Hall (1.8K Ultra Mega Hostel)", category: "hostel", desc: "1st-year B.Tech & M.Tech hostel", mapsQuery: "Ramappa Hall of Residence NIT Warangal" },
-  { name: "Kakatiya Hall", category: "hostel", desc: "2nd-year hostel block", mapsQuery: "Kakatiya Hall NIT Warangal" },
-  { name: "Priyadarshini Hall (Girls)", category: "hostel", desc: "Women's hostel", mapsQuery: "Priyadarshini Hall NIT Warangal" },
-  { name: "International Hall of Residence", category: "hostel", desc: "Hostel for international students", mapsQuery: "International Hall of Residence NIT Warangal" },
-  { name: "1K Hostel", category: "hostel", desc: "Senior boys hostel block", mapsQuery: "1K Hostel NIT Warangal" },
-  { name: "Bhadrakali Hall", category: "hostel", desc: "Senior girls hostel", mapsQuery: "Bhadrakali Hall NIT Warangal" },
-  { name: "Visweswaraya Hall", category: "hostel", desc: "Senior boys hostel", mapsQuery: "Visweswaraya Hall NIT Warangal" },
-  { name: "C.V. Raman Hall", category: "hostel", desc: "Senior boys hostel", mapsQuery: "C.V. Raman Hall NIT Warangal" },
-  { name: "Sarvepalli Radhakrishnan Hall", category: "hostel", desc: "Senior boys hostel", mapsQuery: "Radhakrishnan Hall NIT Warangal" },
-
-  // Landmarks
-  { name: "Main Building / Administration", category: "landmark", desc: "Admin block, Director's office", mapsQuery: "NIT Warangal Main Building" },
-  { name: "Central Library", category: "landmark", desc: "Main library", mapsQuery: "NIT Warangal Central Library" },
-  { name: "Main Gate", category: "landmark", desc: "Campus entrance", mapsQuery: "NIT Warangal Main Gate" },
-  { name: "SBI Bank & ATM", category: "landmark", desc: "Near main gate", mapsQuery: "State Bank of India NIT Warangal" },
-  { name: "OAT (Open Air Theatre)", category: "landmark", desc: "Events & induction sessions", mapsQuery: "Open Air Theatre NIT Warangal" },
-  { name: "Sports Complex", category: "landmark", desc: "Stadium, courts, gym", mapsQuery: "NIT Warangal Sports Complex" },
-  { name: "Health Centre", category: "landmark", desc: "Campus medical centre", mapsQuery: "NIT Warangal Health Centre" },
-  { name: "CCPD (Placement Cell)", category: "landmark", desc: "Centre for Career Planning & Dev.", mapsQuery: "CCPD NIT Warangal" },
-  { name: "Student Activity Centre (SAC)", category: "landmark", desc: "Clubs and student bodies", mapsQuery: "Student Activity Centre NIT Warangal" }
+  { name: "1.8k", category: "hostel", desc: "1.8k", coords: "17.983879, 79.535834" },
+  { name: "Ifc A", category: "landmark", desc: "Integrated Facilities / Food Court Area A", coords: "17.983571, 79.534346" },
+  { name: "EEE Department", category: "dept", desc: "Electrical and Electronics Engineering Department", coords: "17.983268, 79.531921" },
+  { name: "Civil Department", category: "dept", desc: "Civil Engineering Department", coords: "17.982807, 79.530842" },
+  { name: "Mechanical Department", category: "dept", desc: "Mechanical Engineering Department", coords: "17.983114, 79.529756" },
+  { name: "Department of CSE", category: "dept", desc: "Computer Science and Engineering Department", coords: "17.984202, 79.531448" },
+  { name: "ALC", category: "landmark", desc: "Academic Learning Centre / Complex", coords: "17.984326, 79.529303" },
+  { name: "Old Auditorium", category: "landmark", desc: "Old Auditorium, designated as the Physical Reporting Place", coords: "17.984052, 79.529267" },
+  { name: "Taaza Tiffins", category: "landmark", desc: "Breakfast and eatery spot", coords: "17.981661, 79.529617" },
+  { name: "Chemistry, Physics, Metallurgy Department", category: "dept", desc: "Combined block for Science & Metallurgical Engineering departments", coords: "17.984697, 79.533635" },
+  { name: "Chemical and Biotech Departments", category: "dept", desc: "Chemical Engineering and Biotechnology Departments", coords: "17.985599, 79.533409" },
+  { name: "Food Street", category: "landmark", desc: "Campus food street zone", coords: "17.984232, 79.532929" },
+  { name: "ECE Department", category: "dept", desc: "Electronics and Communication Engineering Department", coords: "17.983828, 79.532354" },
+  { name: "Stadium", category: "landmark", desc: "Sports stadium complex", coords: "17.980637, 79.532233" },
+  { name: "Departmental Stores", category: "landmark", desc: "Store location for buying hostel utility items", coords: "17.985128, 79.530230" },
+  { name: "Library", category: "landmark", desc: "Central Library", coords: "17.984431, 79.530481" },
+  { name: "Nescafe", category: "landmark", desc: "Nescafe coffee kiosk", coords: "17.984243, 79.529707" },
+  { name: "Kalam Guest House", category: "landmark", desc: "APJ Abdul Kalam Guest House", coords: "17.987405, 79.531416" },
+  { name: "Girls Hostel", category: "hostel", desc: "Girls Hostel Block", coords: "17.985687, 79.530846" }
 ];
 
 const results = document.getElementById('results');
@@ -257,8 +243,8 @@ const searchInput = document.getElementById('searchInput');
 const tabs = document.querySelectorAll('.tab');
 let activeCat = 'all';
 
-function mapsUrl(query){
-  return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(query);
+function mapsUrl(coords){
+  return "https://www.google.com/maps/search/?api=1&query=" + coords;
 }
 
 function render(){
@@ -282,7 +268,7 @@ function render(){
     html += `<div class="group-label">${groups[cat]}</div>`;
     items.forEach(loc => {
       html += `
-        <a class="card" href="${mapsUrl(loc.mapsQuery)}" rel="noopener">
+        <a class="card" href="${mapsUrl(loc.coords)}" rel="noopener" target="_blank">
           <div>
             <div class="card-name">${loc.name}</div>
             <div class="card-desc">${loc.desc}</div>
