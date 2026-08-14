@@ -35,41 +35,34 @@
   header{
     position: sticky; top:0; z-index: 10;
     background: linear-gradient(180deg, var(--bg) 70%, rgba(23,20,15,0.85) 100%);
-    padding: 20px 16px 12px;
+    padding: clamp(12px, 4vw, 20px) clamp(12px, 4vw, 20px) clamp(8px, 3vw, 12px);
     border-bottom: 1px solid var(--line);
   }
   
   .title-row {
     display: flex;
-    align-items: center; /* Centers the logo and text vertically */
-    gap: 12px;           /* Adds perfect spacing between the logo and text */
-    margin-bottom: 6px;
+    align-items: center;
+    gap: clamp(8px, 3vw, 16px);
+    margin-bottom: clamp(4px, 2vw, 8px);
+    flex-wrap: wrap;
   }
   
   .club-logo {
-    height: 38px;        /* Slightly larger to match the H1 height better */
+    height: clamp(32px, 8vw, 44px);
     width: auto;
     border-radius: 6px;
-    flex-shrink: 0;      /* Prevents the logo from getting squished on tiny screens */
-  }
-
-  h1 {
-    font-family: 'Zilla Slab', serif; 
-    font-weight: 700;
-    font-size: clamp(26px, 6vw, 34px);
-    line-height: 1.1; 
-    color: var(--text); 
-    margin-bottom: 0;    /* Removed the bottom margin since the row handles it now */
+    flex-shrink: 0;
   }
   
   /* Make sure the eyebrow margin is back to normal */
   header .eyebrow {
-    margin-bottom: 12px;
+    margin-bottom: clamp(8px, 2vw, 12px);
+    font-size: clamp(11px, 2.5vw, 12px);
   }
   
   .eyebrow{
     display:flex; align-items:center; gap:8px;
-    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    letter-spacing: 0.14em; text-transform: uppercase;
     color: var(--stone); font-weight:600;
   }
   .compass{
@@ -84,32 +77,37 @@
   }
   h1{
     font-family:'Zilla Slab', serif; font-weight:700;
-    font-size: clamp(26px, 6vw, 34px);
-    line-height:1.1; color: var(--text); margin-bottom: 6px;
+    font-size: clamp(20px, 6vw, 34px);
+    line-height:1.1; color: var(--text); margin-bottom: 0;
   }
-  header p.sub{ color: var(--text-dim); font-size: 14px; }
+  header p.sub{ 
+    color: var(--text-dim); 
+    font-size: clamp(12px, 3vw, 14px);
+    margin-top: clamp(6px, 2vw, 8px);
+    line-height: 1.3;
+  }
 
-  .search-wrap{ padding: 14px 16px 0; }
+  .search-wrap{ padding: clamp(10px, 3vw, 14px) clamp(12px, 4vw, 20px) 0; }
   .search{
-    width:100%; padding: 13px 14px; border-radius: 10px;
+    width:100%; padding: clamp(11px, 2vw, 14px) clamp(12px, 3vw, 14px); border-radius: 10px;
     background: var(--surface); border: 1px solid var(--line);
-    color: var(--text); font-family:'Inter',sans-serif; font-size:16px;
-    min-height: 46px;
+    color: var(--text); font-family:'Inter',sans-serif; font-size:clamp(14px, 3.5vw, 16px);
+    min-height: clamp(42px, 10vw, 48px);
   }
   .search::placeholder{ color: var(--text-dim); }
   .search:focus{ outline:none; border-color: var(--stone); }
 
   .tabs{
-    display:flex; gap:8px; padding: 14px 16px 4px;
+    display:flex; gap:clamp(6px, 2vw, 8px); padding: clamp(10px, 3vw, 14px) clamp(12px, 4vw, 16px) clamp(4px, 2vw, 6px);
     overflow-x:auto; scrollbar-width:none;
   }
   .tabs::-webkit-scrollbar{ display:none; }
   .tab{
-    flex-shrink:0; padding: 10px 18px; border-radius: 999px;
+    flex-shrink:0; padding: clamp(8px, 2vw, 10px) clamp(14px, 3vw, 18px); border-radius: 999px;
     border: 1px solid var(--line); background: transparent;
-    color: var(--text-dim); font-size: 13.5px; font-weight:600;
+    color: var(--text-dim); font-size: clamp(12px, 2.5vw, 13.5px); font-weight:600;
     letter-spacing:0.02em; cursor:pointer; transition: background .12s ease, color .12s ease;
-    font-family:'Inter',sans-serif; min-height: 40px;
+    font-family:'Inter',sans-serif; min-height: clamp(36px, 8vw, 40px);
   }
   .tab.active{ background: var(--stone); border-color: var(--stone); color: #1A1409; }
   .tab:active{ transform: scale(0.96); }
@@ -152,7 +150,7 @@
 <header>
   <div class="eyebrow"><span class="compass"></span> Junior Induction · 17 Aug</div>
   <div class="title-row">
-    <img src="YOUR_LOGO_URL_HERE.webp" alt="Club Logo" class="club-logo">
+    <img src="club_logo.webp" alt="Club Logo" class="club-logo">
     <h1>Find Your Way Around NITW</h1>
   </div>
   <p class="sub">Search or filter, then tap "Directions" to open it in Google Maps.</p>
