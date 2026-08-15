@@ -1,5 +1,5 @@
 name,category,coords,description
-1.8k,hostel,"17.983879, 79.535834",1.8k
+1.8k Hostel,hostel,"17.983879, 79.535834",Ramappa Hall of Residence
 Ifc A,landmark,"17.983571, 79.534346",Integrated Facilities / Food Court Area A
 EEE Department,dept,"17.983268, 79.531921",Electrical and Electronics Engineering Department
 Civil Department,dept,"17.982807, 79.530842",Civil Engineering Department
@@ -18,3 +18,4 @@ Library,landmark,"17.984431, 79.530481",Central Library
 Nescafe,landmark,"17.984243, 79.529707",Nescafe coffee kiosk
 Kalam Guest House,landmark,"17.987405, 79.531416",APJ Abdul Kalam Guest House
 Girls Hostel,hostel,"17.985687, 79.530846",Girls Hostel Block
+NITW Dispencary,landmark,"17.981186, 79.529904",Health care Centre

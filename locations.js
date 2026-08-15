@@ -1,9 +1,9 @@
 window.LOCATIONS = [
   {
-    "name": "1.8k",
+    "name": "1.8k Hostel",
     "category": "hostel",
     "coords": "17.983879, 79.535834",
-    "desc": "1.8k"
+    "desc": "Ramappa Hall of Residence"
   },
   {
     "name": "Ifc A",
@@ -112,5 +112,11 @@ window.LOCATIONS = [
     "category": "hostel",
     "coords": "17.985687, 79.530846",
     "desc": "Girls Hostel Block"
+  },
+  {
+    "name": "NITW Dispencary",
+    "category": "landmark",
+    "coords": "17.981186, 79.529904",
+    "desc": "Health care Centre"
   }
 ];
