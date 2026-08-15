@@ -12,10 +12,10 @@ window.LOCATIONS = [
     "desc": "Integrated Facilities / Food Court Area A"
   },
   {
-    "name": "EEE Department",
+    "name": "EEE/EE Department",
     "category": "dept",
     "coords": "17.983268, 79.531921",
-    "desc": "Electrical and Electronics Engineering Department"
+    "desc": "Electrical and Electronics Engineering/Electrical Engineering Department"
   },
   {
     "name": "Civil Department",
@@ -118,5 +118,11 @@ window.LOCATIONS = [
     "category": "landmark",
     "coords": "17.981186, 79.529904",
     "desc": "Health care Centre"
+  },
+  {
+    "name": "Post Office",
+    "category": "landmark",
+    "coords": "17.987648, 79.531855",
+    "desc": "Postal services"
   }
 ];
