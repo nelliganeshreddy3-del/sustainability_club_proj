@@ -223,28 +223,9 @@
 
 <footer>NIT Warangal Campus Guide · Built for Induction 2026</footer>
 
+<script src="locations.js"></script>
 <script>
-const LOCATIONS = [
-  { name: "1.8k", category: "hostel", desc: "1.8k", coords: "17.983879, 79.535834" },
-  { name: "Ifc A", category: "landmark", desc: "Integrated Facilities / Food Court Area A", coords: "17.983571, 79.534346" },
-  { name: "EEE Department", category: "dept", desc: "Electrical and Electronics Engineering Department", coords: "17.983268, 79.531921" },
-  { name: "Civil Department", category: "dept", desc: "Civil Engineering Department", coords: "17.982807, 79.530842" },
-  { name: "Mechanical Department", category: "dept", desc: "Mechanical Engineering Department", coords: "17.983114, 79.529756" },
-  { name: "Department of CSE", category: "dept", desc: "Computer Science and Engineering Department", coords: "17.984202, 79.531448" },
-  { name: "ALC", category: "landmark", desc: "Academic Learning Centre / Complex", coords: "17.984326, 79.529303" },
-  { name: "Old Auditorium", category: "landmark", desc: "Old Auditorium, designated as the Physical Reporting Place", coords: "17.984052, 79.529267" },
-  { name: "Taaza Tiffins", category: "landmark", desc: "Breakfast and eatery spot", coords: "17.981661, 79.529617" },
-  { name: "Chemistry, Physics, Metallurgy Department", category: "dept", desc: "Combined block for Science & Metallurgical Engineering departments", coords: "17.984697, 79.533635" },
-  { name: "Chemical and Biotech Departments", category: "dept", desc: "Chemical Engineering and Biotechnology Departments", coords: "17.985599, 79.533409" },
-  { name: "Food Street", category: "landmark", desc: "Campus food street zone", coords: "17.984232, 79.532929" },
-  { name: "ECE Department", category: "dept", desc: "Electronics and Communication Engineering Department", coords: "17.983828, 79.532354" },
-  { name: "Stadium", category: "landmark", desc: "Sports stadium complex", coords: "17.980637, 79.532233" },
-  { name: "Departmental Stores", category: "landmark", desc: "Store location for buying hostel utility items", coords: "17.985128, 79.530230" },
-  { name: "Library", category: "landmark", desc: "Central Library", coords: "17.984431, 79.530481" },
-  { name: "Nescafe", category: "landmark", desc: "Nescafe coffee kiosk", coords: "17.984243, 79.529707" },
-  { name: "Kalam Guest House", category: "landmark", desc: "APJ Abdul Kalam Guest House", coords: "17.987405, 79.531416" },
-  { name: "Girls Hostel", category: "hostel", desc: "Girls Hostel Block", coords: "17.985687, 79.530846" }
-];
+const LOCATIONS = window.LOCATIONS || [];
 
 const results = document.getElementById('results');
 const searchInput = document.getElementById('searchInput');

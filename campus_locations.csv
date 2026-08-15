@@ -1,20 +1,20 @@
-name_of_place,numbers _related to the link,description
-1.8k,"17.983879, 79.535834",1.8k
-Ifc A,"17.983571, 79.534346",Integrated Facilities / Food Court Area A
-EEE Department,"17.983268, 79.531921",Electrical and Electronics Engineering Department
-Civil Department,"17.982807, 79.530842",Civil Engineering Department
-Mechanical Department,"17.983114, 79.529756",Mechanical Engineering Department
-Department of CSE,"17.984202, 79.531448",Computer Science and Engineering Department
-ALC,"17.984326, 79.529303",Academic Learning Centre / Complex
-Old Auditorium,"17.984052, 79.529267","Old Auditorium, designated as the Physical Reporting Place"
-Taaza Tiffins,"17.981661, 79.529617",Breakfast and eatery spot
-"Chemistry, Physics, Metallurgy Department","17.984697, 79.533635",Combined block for Science & Metallurgical Engineering departments
-Chemical and Biotech Departments,"17.985599, 79.533409",Chemical Engineering and Biotechnology Departments
-Food Street,"17.984232, 79.532929",Campus food street zone
-ECE Department,"17.983828, 79.532354",Electronics and Communication Engineering Department
-Stadium,"17.980637, 79.532233",Sports stadium complex
-Departmental Stores,"17.985128, 79.530230",Store location for buying hostel utility items
-Library,"17.984431, 79.530481",Central Library
-Nescafe,"17.984243, 79.529707",Nescafe coffee kiosk
-Kalam Guest House,"17.987405, 79.531416",APJ Abdul Kalam Guest House
-Girls Hostel,"17.985687, 79.530846",Girls Hostel Block
+name,category,coords,description
+1.8k,hostel,"17.983879, 79.535834",1.8k
+Ifc A,landmark,"17.983571, 79.534346",Integrated Facilities / Food Court Area A
+EEE Department,dept,"17.983268, 79.531921",Electrical and Electronics Engineering Department
+Civil Department,dept,"17.982807, 79.530842",Civil Engineering Department
+Mechanical Department,dept,"17.983114, 79.529756",Mechanical Engineering Department
+Department of CSE,dept,"17.984202, 79.531448",Computer Science and Engineering Department
+ALC,landmark,"17.984326, 79.529303",Academic Learning Centre / Complex
+Old Auditorium,landmark,"17.984052, 79.529267","Old Auditorium, designated as the Physical Reporting Place"
+Taaza Tiffins,landmark,"17.981661, 79.529617",Breakfast and eatery spot
+"Chemistry, Physics, Metallurgy Department",dept,"17.984697, 79.533635",Combined block for Science & Metallurgical Engineering departments
+Chemical and Biotech Departments,dept,"17.985599, 79.533409",Chemical Engineering and Biotechnology Departments
+Food Street,landmark,"17.984232, 79.532929",Campus food street zone
+ECE Department,dept,"17.983828, 79.532354",Electronics and Communication Engineering Department
+Stadium,landmark,"17.980637, 79.532233",Sports stadium complex
+Departmental Stores,landmark,"17.985128, 79.530230",Store location for buying hostel utility items
+Library,landmark,"17.984431, 79.530481",Central Library
+Nescafe,landmark,"17.984243, 79.529707",Nescafe coffee kiosk
+Kalam Guest House,landmark,"17.987405, 79.531416",APJ Abdul Kalam Guest House
+Girls Hostel,hostel,"17.985687, 79.530846",Girls Hostel Block
