@@ -184,7 +184,7 @@
 
   .hint{ font-size:12.5px; color: var(--text-dim); padding: 2px 2px 4px; }
 
-  .empty{ text-align:center; color: var(--text-dim); padding: 40px 20px; font-size:14px; }
+  .empty, .loading{ text-align:center; color: var(--text-dim); padding: 40px 20px; font-size:14px; }
 
   footer{
     text-align:center; color: var(--text-dim); font-size:12px;
@@ -218,7 +218,7 @@
 
 <main>
   <div class="hint">Tap any card to open it in Google Maps</div>
-  <div id="results"></div>
+  <div id="results" class="loading">Loading campus list…</div>
 </main>
 
 <footer>NIT Warangal Campus Guide · Built for Induction 2026</footer>
@@ -231,6 +231,14 @@ const results = document.getElementById('results');
 const searchInput = document.getElementById('searchInput');
 const tabs = document.querySelectorAll('.tab');
 let activeCat = 'all';
+let renderFrame = null;
+let debounceTimer = null;
+
+const normalizedLocations = LOCATIONS.map(loc => ({
+  ...loc,
+  nameLower: String(loc.name || '').toLowerCase(),
+  descLower: String(loc.desc || '').toLowerCase()
+}));
 
 function mapsUrl(coords){
   const cleanCoords = String(coords).replace(/\s+/g, '');
@@ -239,19 +247,20 @@ function mapsUrl(coords){
 
 function render(){
   const term = searchInput.value.trim().toLowerCase();
-  const filtered = LOCATIONS.filter(loc => {
+  const filtered = normalizedLocations.filter(loc => {
     const matchesCat = activeCat === 'all' || loc.category === activeCat;
-    const matchesSearch = !term || loc.name.toLowerCase().includes(term) || loc.desc.toLowerCase().includes(term);
+    const matchesSearch = !term || loc.nameLower.includes(term) || loc.descLower.includes(term);
     return matchesCat && matchesSearch;
   });
 
   if(filtered.length === 0){
-    results.innerHTML = '<div class="empty">No matches. Try a different search.</div>';
+    results.className = 'empty';
+    results.textContent = 'No matches. Try a different search.';
     return;
   }
 
-  const groups = { dept: "Departments", hostel: "Hostels", landmark: "Landmarks" };
-  let html = "";
+  const groups = { dept: 'Departments', hostel: 'Hostels', landmark: 'Landmarks' };
+  let html = '';
   Object.keys(groups).forEach(cat => {
     const items = filtered.filter(l => l.category === cat);
     if(items.length === 0) return;
@@ -270,7 +279,14 @@ function render(){
         </a>`;
     });
   });
+
+  results.className = '';
   results.innerHTML = html;
+}
+
+function scheduleRender(){
+  cancelAnimationFrame(renderFrame);
+  renderFrame = requestAnimationFrame(render);
 }
 
 tabs.forEach(tab => {
@@ -278,11 +294,16 @@ tabs.forEach(tab => {
     tabs.forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     activeCat = tab.dataset.cat;
-    render();
+    scheduleRender();
   });
 });
-searchInput.addEventListener('input', render);
-render();
+
+searchInput.addEventListener('input', () => {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(scheduleRender, 40);
+});
+
+scheduleRender();
 </script>
 </body>
 </html>
