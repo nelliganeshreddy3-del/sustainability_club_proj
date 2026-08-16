@@ -210,10 +210,10 @@
 </div>
 
 <div class="tabs" id="tabs">
-  <button class="tab active" data-cat="all">All</button>
+  <button class="tab" data-cat="landmark">Landmarks</button>
   <button class="tab" data-cat="dept">Departments</button>
   <button class="tab" data-cat="hostel">Hostels</button>
-  <button class="tab" data-cat="landmark">Landmarks</button>
+  <button class="tab active" data-cat="all">All</button>
 </div>
 
 <main>
@@ -247,11 +247,19 @@ function mapsUrl(coords){
 
 function render(){
   const term = searchInput.value.trim().toLowerCase();
-  const filtered = normalizedLocations.filter(loc => {
-    const matchesCat = activeCat === 'all' || loc.category === activeCat;
-    const matchesSearch = !term || loc.nameLower.includes(term) || loc.descLower.includes(term);
-    return matchesCat && matchesSearch;
-  });
+  const categoryOrder = ['landmark', 'dept', 'hostel'];
+
+  const filtered = normalizedLocations
+    .filter(loc => {
+      const matchesCat = activeCat === 'all' || loc.category === activeCat;
+      const matchesSearch = !term || loc.nameLower.includes(term) || loc.descLower.includes(term);
+      return matchesCat && matchesSearch;
+    })
+    .sort((a, b) => {
+      const categoryDiff = categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category);
+      if (categoryDiff !== 0) return categoryDiff;
+      return a.nameLower.localeCompare(b.nameLower);
+    });
 
   if(filtered.length === 0){
     results.className = 'empty';
@@ -259,7 +267,7 @@ function render(){
     return;
   }
 
-  const groups = { dept: 'Departments', hostel: 'Hostels', landmark: 'Landmarks' };
+  const groups = { landmark: 'Landmarks', dept: 'Departments', hostel: 'Hostels' };
   let html = '';
   Object.keys(groups).forEach(cat => {
     const items = filtered.filter(l => l.category === cat);

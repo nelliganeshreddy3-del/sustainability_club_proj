@@ -2,7 +2,7 @@ name,category,coords,description
 1.8k Hostel,hostel,"17.983879, 79.535834",Ramappa Hall of Residence
 IFC-A,landmark,"17.983571, 79.534346",Integrated Facilities / Food Court Area A
 EED,dept,"17.983268, 79.531921",Electrical and Electronics Engineering/Electrical Engineering Department
-CD,dept,"17.982807, 79.530842",Civil Engineering Department
+CED,dept,"17.982807, 79.530842",Civil Engineering Department
 MED,dept,"17.983114, 79.529756",Mechanical Engineering Department
 CSE,dept,"17.984202, 79.531448",Computer Science and Engineering Department
 ALC,landmark,"17.984326, 79.529303",Academic Learning Centre / Complex

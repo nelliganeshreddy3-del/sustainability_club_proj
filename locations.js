@@ -18,7 +18,7 @@ window.LOCATIONS = [
     "desc": "Electrical and Electronics Engineering/Electrical Engineering Department"
   },
   {
-    "name": "CD",
+    "name": "CED",
     "category": "dept",
     "coords": "17.982807, 79.530842",
     "desc": "Civil Engineering Department"
