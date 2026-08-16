@@ -6,31 +6,31 @@ window.LOCATIONS = [
     "desc": "Ramappa Hall of Residence"
   },
   {
-    "name": "Ifc A",
+    "name": "IFC-A",
     "category": "landmark",
     "coords": "17.983571, 79.534346",
     "desc": "Integrated Facilities / Food Court Area A"
   },
   {
-    "name": "EEE/EE Department",
+    "name": "EED",
     "category": "dept",
     "coords": "17.983268, 79.531921",
     "desc": "Electrical and Electronics Engineering/Electrical Engineering Department"
   },
   {
-    "name": "Civil Department",
+    "name": "CD",
     "category": "dept",
     "coords": "17.982807, 79.530842",
     "desc": "Civil Engineering Department"
   },
   {
-    "name": "Mechanical Department",
+    "name": "MED",
     "category": "dept",
     "coords": "17.983114, 79.529756",
     "desc": "Mechanical Engineering Department"
   },
   {
-    "name": "Department of CSE",
+    "name": "CSE",
     "category": "dept",
     "coords": "17.984202, 79.531448",
     "desc": "Computer Science and Engineering Department"
@@ -42,7 +42,7 @@ window.LOCATIONS = [
     "desc": "Academic Learning Centre / Complex"
   },
   {
-    "name": "Old Auditorium",
+    "name": "Auditorium",
     "category": "landmark",
     "coords": "17.984052, 79.529267",
     "desc": "Old Auditorium, designated as the Physical Reporting Place"
@@ -72,7 +72,7 @@ window.LOCATIONS = [
     "desc": "Campus food street zone"
   },
   {
-    "name": "ECE Department",
+    "name": "ECE",
     "category": "dept",
     "coords": "17.983828, 79.532354",
     "desc": "Electronics and Communication Engineering Department"
@@ -124,5 +124,11 @@ window.LOCATIONS = [
     "category": "landmark",
     "coords": "17.987648, 79.531855",
     "desc": "Postal services"
+  },
+  {
+    "name": "NAB",
+    "category": "landmark",
+    "coords": "17.984435, 79.532276",
+    "desc": "New Academic Building"
   }
 ];
