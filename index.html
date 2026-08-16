@@ -210,10 +210,10 @@
 </div>
 
 <div class="tabs" id="tabs">
-  <button class="tab" data-cat="landmark">Landmarks</button>
+  <button class="tab active" data-cat="landmark">Landmarks</button>
   <button class="tab" data-cat="dept">Departments</button>
   <button class="tab" data-cat="hostel">Hostels</button>
-  <button class="tab active" data-cat="all">All</button>
+  <button class="tab" data-cat="all">All</button>
 </div>
 
 <main>
@@ -230,7 +230,7 @@ const LOCATIONS = window.LOCATIONS || [];
 const results = document.getElementById('results');
 const searchInput = document.getElementById('searchInput');
 const tabs = document.querySelectorAll('.tab');
-let activeCat = 'all';
+let activeCat = 'landmark';
 let renderFrame = null;
 let debounceTimer = null;
 
