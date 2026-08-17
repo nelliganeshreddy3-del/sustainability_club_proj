@@ -9,7 +9,7 @@ window.LOCATIONS = [
     "name": "IFC-A",
     "category": "landmark",
     "coords": "17.983571, 79.534346",
-    "desc": "Integrated Facilities / Food Court Area A"
+    "desc": "Institute Food Court"
   },
   {
     "name": "EED",
