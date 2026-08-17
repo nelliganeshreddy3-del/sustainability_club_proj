@@ -15,7 +15,7 @@ window.LOCATIONS = [
     "name": "EED",
     "category": "dept",
     "coords": "17.983268, 79.531921",
-    "desc": "Electrical and Electronics Engineering/Electrical Engineering Department"
+    "desc": "Electrical Engineering Department"
   },
   {
     "name": "CED",
@@ -96,10 +96,10 @@ window.LOCATIONS = [
     "desc": "Central Library"
   },
   {
-    "name": "Nescafe",
+    "name": "Nescafé",
     "category": "landmark",
     "coords": "17.984243, 79.529707",
-    "desc": "Nescafe coffee kiosk"
+    "desc": "Nescafé coffee kiosk"
   },
   {
     "name": "Kalam Guest House",
@@ -114,10 +114,10 @@ window.LOCATIONS = [
     "desc": "Girls Hostel Block"
   },
   {
-    "name": "NITW Dispencary",
+    "name": "NITW Dispensary",
     "category": "landmark",
     "coords": "17.981186, 79.529904",
-    "desc": "Health care Centre"
+    "desc": "Healthcare Centre"
   },
   {
     "name": "Post Office",
