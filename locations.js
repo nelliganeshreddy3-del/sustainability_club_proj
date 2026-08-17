@@ -1,6 +1,6 @@
 window.LOCATIONS = [
   {
-    "name": "1.8k Hostel",
+    "name": "1.8k Ultra Mega Hostel (UMH)",
     "category": "hostel",
     "coords": "17.983879, 79.535834",
     "desc": "Ramappa Hall of Residence"
@@ -39,7 +39,7 @@ window.LOCATIONS = [
     "name": "ALC",
     "category": "landmark",
     "coords": "17.984326, 79.529303",
-    "desc": "Academic Learning Centre / Complex"
+    "desc": "DR. B.R. Ambedkar Learning Centre"
   },
   {
     "name": "Auditorium",
@@ -84,7 +84,7 @@ window.LOCATIONS = [
     "desc": "Sports stadium complex"
   },
   {
-    "name": "Departmental Stores",
+    "name": "Departmental Store",
     "category": "landmark",
     "coords": "17.985128, 79.530230",
     "desc": "Store location for buying hostel utility items"
@@ -130,5 +130,29 @@ window.LOCATIONS = [
     "category": "landmark",
     "coords": "17.984435, 79.532276",
     "desc": "New Academic Building"
+  },
+  {
+    "name": "ICICI Bank ATM",
+    "category": "landmark",
+    "coords": "17.987648, 79.531855",
+    "desc": "24/7 cash services"
+  },
+  {
+    "name": "SBI ATM",
+    "category": "landmark",
+    "coords": "17.980927, 79.532286",
+    "desc": "24/7 cash services"
+  },
+  {
+    "name": "NITW Dominos Pizza",
+    "category": "landmark",
+    "coords": "17.979796, 79.530633",
+    "desc": "Pizzas available"
+  },
+  {
+    "name": "DASA Hostel",
+    "category": "hostel",
+    "coords": "17.985753, 79.534808",
+    "desc": "International Hall of Residence"
   }
 ];

@@ -1,11 +1,11 @@
 name,category,coords,description
-1.8k Hostel,hostel,"17.983879, 79.535834",Ramappa Hall of Residence
+"1.8k Ultra Mega Hostel (UMH)",hostel,"17.983879, 79.535834",Ramappa Hall of Residence
 IFC-A,landmark,"17.983571, 79.534346",Integrated Facilities / Food Court Area A
 EED,dept,"17.983268, 79.531921",Electrical Engineering Department
 CED,dept,"17.982807, 79.530842",Civil Engineering Department
 MED,dept,"17.983114, 79.529756",Mechanical Engineering Department
 CSE,dept,"17.984202, 79.531448",Computer Science and Engineering Department
-ALC,landmark,"17.984326, 79.529303",Academic Learning Centre / Complex
+ALC,landmark,"17.984326, 79.529303",DR. B.R. Ambedkar Learning Centre
 Auditorium,landmark,"17.984052, 79.529267","Old Auditorium, designated as the Physical Reporting Place"
 Taaza Tiffins,landmark,"17.981661, 79.529617",Breakfast and eatery spot
 "Chemistry, Physics, Metallurgy Department",dept,"17.984697, 79.533635",Combined block for Science & Metallurgical Engineering departments
@@ -13,7 +13,7 @@ Chemical and Biotech Departments,dept,"17.985599, 79.533409",Chemical Engineerin
 Food Street,landmark,"17.984232, 79.532929",Campus food street zone
 ECE,dept,"17.983828, 79.532354",Electronics and Communication Engineering Department
 Stadium,landmark,"17.980637, 79.532233",Sports stadium complex
-Departmental Stores,landmark,"17.985128, 79.530230",Store location for buying hostel utility items
+Departmental Store,landmark,"17.985128, 79.530230",Store location for buying hostel utility items
 Library,landmark,"17.984431, 79.530481",Central Library
 Nescafé,landmark,"17.984243, 79.529707",Nescafé coffee kiosk
 Kalam Guest House,landmark,"17.987405, 79.531416",APJ Abdul Kalam Guest House
@@ -21,3 +21,7 @@ Girls Hostel,hostel,"17.985687, 79.530846",Girls Hostel Block
 NITW Dispensary,landmark,"17.981186, 79.529904",Healthcare Centre
 Post Office,landmark,"17.987648, 79.531855",Postal services
 NAB,landmark,"17.984435, 79.532276",New Academic Building
+ICICI Bank ATM,landmark,"17.987648, 79.531855",24/7 cash services 
+SBI ATM,landmark,"17.980927, 79.532286",24/7 cash services
+NITW Dominos Pizza,landmark,"17.979796, 79.530633",Pizzas available
+DASA Hostel,hostel,"17.985753, 79.534808",International Hall of Residence
